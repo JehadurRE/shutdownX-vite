@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build",
-    "dev": "next dev",
-    "lint": "next lint",
-    "start": "next start"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext js,jsx,ts,tsx"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -37,7 +37,7 @@
     "@radix-ui/react-toggle": "latest",
     "@radix-ui/react-toggle-group": "latest",
     "@radix-ui/react-tooltip": "latest",
-    "@vercel/analytics": "latest",
+
     "@vitejs/plugin-react": "latest",
     "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.1",
@@ -51,8 +51,7 @@
     "less": "latest",
     "lightningcss": "latest",
     "lucide-react": "^0.454.0",
-    "next": "15.2.4",
-    "next-themes": "latest",
+
     "react": "^19",
     "react-day-picker": "latest",
     "react-dom": "^19",
