@@ -24,7 +24,7 @@ const Navigation: React.FC = () => {
   }
 
   return (
-    <header className="sticky top-0 z-40">
+    <header className="sticky top-4 z-40">
       <div className="mx-auto max-w-7xl px-5">
         <nav
           className={`glass  mb-2 rounded-2xl px-5 py-3 flex items-center justify-between shadow-glow transition-all duration-300 ${
