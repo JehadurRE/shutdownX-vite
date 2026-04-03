@@ -16,7 +16,7 @@ const CTA: React.FC = () => {
       <div className="mx-auto max-w-6xl px-6">
         <div
           ref={ref}
-          className={`relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-white/0 p-10 md:p-14 shadow-glow reveal transition-all duration-1000 ${
+          className={`relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-white/0 p-10 md:p-14 shadow-glow lux-card reveal transition-all duration-1000 ${
             isVisible ? "in-view" : ""
           }`}
         >
@@ -30,7 +30,7 @@ const CTA: React.FC = () => {
           />
 
           <div className="relative">
-            <h3 className="font-display text-2xl md:text-4xl font-bold">Let's build your next premium product.</h3>
+            <h3 className="type-rhythm font-display text-2xl md:text-4xl font-bold">Let's build your next premium product.</h3>
             <p className="mt-2 text-slate-300">AI-native engineering, elegant UX, and execution you can rely on.</p>
             <div className="mt-4 flex flex-wrap items-center gap-2">
               <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300">
@@ -46,13 +46,13 @@ const CTA: React.FC = () => {
             <div className="mt-6 flex flex-wrap gap-3">
               <button
                 onClick={() => openContact("hire")}
-                className="ripple rounded-2xl bg-gradient-to-r from-aurora-purple via-aurora-blue to-aurora-teal px-5 py-3 font-semibold shadow-glow hover:shadow-glowTeal transition"
+                className="lux-btn ripple rounded-2xl bg-gradient-to-r from-aurora-purple via-aurora-blue to-aurora-teal px-5 py-3 font-semibold shadow-glow hover:shadow-glowTeal transition"
               >
                 Work with us
               </button>
               <button
                 onClick={() => openContact("refer")}
-                className="ripple rounded-2xl border border-white/10 bg-white/5 px-5 py-3 font-semibold hover:bg-white/10 transition"
+                className="lux-btn ripple rounded-2xl border border-white/10 bg-white/5 px-5 py-3 font-semibold hover:bg-white/10 transition"
               >
                 Refer a specialist
               </button>

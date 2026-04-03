@@ -183,7 +183,7 @@ const Hero: React.FC = () => {
             </div>
 
             <h1
-              className={`font-display text-4xl md:text-6xl lg:text-7xl leading-tight font-extrabold grad-text reveal transition-all duration-1000 delay-200 ${
+              className={`type-rhythm font-display text-4xl md:text-6xl lg:text-7xl leading-tight font-extrabold grad-text reveal transition-all duration-1000 delay-200 ${
                 isVisible ? "in-view" : ""
               }`}
             >
@@ -206,19 +206,19 @@ const Hero: React.FC = () => {
             >
               <button
                 onClick={() => openContact("hire")}
-                className="ripple w-full sm:w-auto rounded-2xl bg-gradient-to-r from-aurora-purple via-aurora-blue to-aurora-teal px-5 py-3 font-semibold shadow-glow hover:shadow-glowTeal transition"
+                className="lux-btn ripple w-full sm:w-auto rounded-2xl bg-gradient-to-r from-aurora-purple via-aurora-blue to-aurora-teal px-5 py-3 font-semibold shadow-glow hover:shadow-glowTeal transition"
               >
                 Work with us
               </button>
               <button
                 onClick={() => scrollToSection("services")}
-                className="ripple w-full sm:w-auto rounded-2xl border border-white/10 bg-white/5 px-5 py-3 font-semibold hover:bg-white/10 transition"
+                className="lux-btn ripple w-full sm:w-auto rounded-2xl border border-white/10 bg-white/5 px-5 py-3 font-semibold hover:bg-white/10 transition"
               >
                 Explore services
               </button>
               <button
                 onClick={() => openContact("refer")}
-                className="ripple w-full sm:w-auto rounded-2xl border border-aurora-teal/30 bg-aurora-teal/10 px-5 py-3 font-semibold text-teal-300 hover:bg-aurora-teal/20 transition"
+                className="lux-btn ripple w-full sm:w-auto rounded-2xl border border-aurora-teal/30 bg-aurora-teal/10 px-5 py-3 font-semibold text-teal-300 hover:bg-aurora-teal/20 transition"
               >
                 Refer a specialist
               </button>
@@ -245,15 +245,15 @@ const Hero: React.FC = () => {
                 isVisible ? "in-view" : ""
               }`}
             >
-              <div className="glass rounded-xl p-4">
+              <div className="glass lux-card rounded-xl p-4">
                 <div className="text-sm text-slate-400">Projects launched</div>
                 <div className="mt-1 font-semibold">50+</div>
               </div>
-              <div className="glass rounded-xl p-4">
+              <div className="glass lux-card rounded-xl p-4">
                 <div className="text-sm text-slate-400">Typical kickoff</div>
                 <div className="mt-1 font-semibold">7 business days</div>
               </div>
-              <div className="glass rounded-xl p-4">
+              <div className="glass lux-card rounded-xl p-4">
                 <div className="text-sm text-slate-400">Client satisfaction</div>
                 <div className="mt-1 font-semibold">98%</div>
               </div>
@@ -292,7 +292,7 @@ const Hero: React.FC = () => {
                   {floatingCards.map((card) => (
                     <div
                       key={`${card.id}-mobile`}
-                      className="snap-center min-w-[230px] flex-1 glass rounded-2xl p-3 border border-white/15 backdrop-blur-xl"
+                      className="snap-center min-w-[230px] flex-1 glass lux-card rounded-2xl p-3 border border-white/15 backdrop-blur-xl"
                     >
                       <div className="flex items-center justify-between gap-2">
                         <div className="text-[10px] uppercase tracking-[0.18em] text-slate-300">{card.label}</div>
@@ -334,7 +334,7 @@ const Hero: React.FC = () => {
                 {floatingCards.map((card) => (
                   <div
                     key={card.id}
-                    className={`absolute ${card.position} ${card.mobileClass} glass rounded-2xl p-3 sm:p-4 parallax tilt transition-all duration-300 hover:scale-105 hover:shadow-glow`}
+                    className={`absolute ${card.position} ${card.mobileClass} glass lux-card rounded-2xl p-3 sm:p-4 parallax tilt transition-all duration-300 hover:scale-105 hover:shadow-glow`}
                   >
                     <div className="flex items-center justify-between gap-2">
                       <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.18em] text-slate-400">{card.label}</div>

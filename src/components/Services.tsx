@@ -32,7 +32,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   return (
     <div
       ref={ref}
-      className={`group glass rounded-2xl p-6 hover:shadow-glow transition-all duration-700 reveal tilt cursor-pointer ${
+      className={`group glass lux-card rounded-2xl p-6 hover:shadow-glow transition-all duration-700 reveal tilt cursor-pointer ${
         isVisible ? "in-view" : ""
       }`}
       style={{ transitionDelay: `${delay}ms` }}
@@ -147,7 +147,7 @@ const Services: React.FC = () => {
       <div className="mx-auto max-w-7xl px-6">
         <div ref={ref} className="max-w-3xl">
           <h2
-            className={`font-display text-3xl md:text-5xl font-bold reveal transition-all duration-1000 ${
+            className={`type-rhythm font-display text-3xl md:text-5xl font-bold reveal transition-all duration-1000 ${
               isVisible ? "in-view" : ""
             }`}
           >
@@ -170,7 +170,7 @@ const Services: React.FC = () => {
           ))}
         </div>
 
-        <div className="mt-8 glass rounded-2xl p-6 md:p-7">
+        <div className="mt-8 glass lux-card rounded-2xl p-6 md:p-7">
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
             <div>
               <h3 className="font-display text-xl font-bold">How we engage</h3>

@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
                   <a
                     key={link.href}
                     href={link.href}
-                    className="rounded-lg border border-transparent px-2 py-1 text-slate-300 transition hover:border-white/10 hover:bg-white/5 hover:text-teal-300"
+                    className="lux-link rounded-lg border border-transparent px-2 py-1 text-slate-300 transition hover:border-white/10 hover:bg-white/5 hover:text-teal-300"
                   >
                     {link.label}
                   </a>
@@ -96,7 +96,7 @@ const Footer: React.FC = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-slate-300 transition hover:border-aurora-blue/40 hover:text-teal-300"
+                    className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-slate-300 transition hover:border-aurora-blue/40 hover:text-teal-300 lux-card"
                   >
                     {renderSocialIcon(social.label)}
                     {social.label}

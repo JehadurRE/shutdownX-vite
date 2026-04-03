@@ -38,7 +38,7 @@ const InfoModal: React.FC = () => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={handleBackdropClick}>
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
-      <div className="relative w-full max-w-md glass rounded-2xl p-6 animate-in fade-in-0 zoom-in-95 duration-300">
+      <div className="relative w-full max-w-md glass lux-card rounded-2xl p-6 animate-in fade-in-0 zoom-in-95 duration-300">
         <div className="flex items-center justify-between">
           <div className="font-semibold">Service Details</div>
           <button
@@ -61,7 +61,7 @@ const InfoModal: React.FC = () => {
         <div className="mt-5 flex justify-end">
           <button
             onClick={closeInfo}
-            className="ripple rounded-xl bg-gradient-to-r from-aurora-purple to-aurora-blue px-4 py-2 font-semibold shadow-glow hover:shadow-glowTeal transition"
+            className="lux-btn ripple rounded-xl bg-gradient-to-r from-aurora-purple to-aurora-blue px-4 py-2 font-semibold shadow-glow hover:shadow-glowTeal transition"
           >
             Got it
           </button>

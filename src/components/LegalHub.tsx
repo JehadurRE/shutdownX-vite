@@ -40,7 +40,7 @@ const LegalHub: React.FC = () => {
       <div className="mx-auto max-w-7xl px-6">
         <div
           ref={ref}
-          className={`overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-white/0 p-8 md:p-10 shadow-glow reveal transition-all duration-1000 ${
+          className={`overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-white/0 p-8 md:p-10 shadow-glow lux-card reveal transition-all duration-1000 ${
             isVisible ? "in-view" : ""
           }`}
         >
@@ -48,14 +48,14 @@ const LegalHub: React.FC = () => {
             {trustPillars.map((pillar) => (
               <span
                 key={pillar}
-                className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300"
+                className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300 lux-link"
               >
                 {pillar}
               </span>
             ))}
           </div>
 
-          <h3 className="mt-5 font-display text-3xl md:text-4xl font-bold">Trust Center</h3>
+          <h3 className="type-rhythm mt-5 font-display text-3xl md:text-4xl font-bold">Trust Center</h3>
           <p className="mt-3 max-w-3xl text-slate-300">
             Everything partners, reviewers, and payment providers need — centralized and easy to verify.
           </p>
@@ -65,7 +65,7 @@ const LegalHub: React.FC = () => {
               <a
                 key={item.title}
                 href={item.href}
-                className="group rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:border-aurora-blue/40 hover:bg-white/10"
+                className="group rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:border-aurora-blue/40 hover:bg-white/10 lux-card"
               >
                 <div className="flex items-center justify-between gap-3">
                   <h4 className="font-semibold text-lg group-hover:text-aurora-blue transition-colors">{item.title}</h4>

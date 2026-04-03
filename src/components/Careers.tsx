@@ -19,7 +19,7 @@ const JobCard: React.FC<JobCardProps> = ({ title, type, description, skills, del
   return (
     <div
       ref={ref}
-      className={`glass rounded-2xl p-5 reveal transition-all duration-700 hover:shadow-glow ${
+      className={`glass lux-card rounded-2xl p-5 reveal transition-all duration-700 hover:shadow-glow ${
         isVisible ? "in-view" : ""
       }`}
       style={{ transitionDelay: `${delay}ms` }}
@@ -38,7 +38,7 @@ const JobCard: React.FC<JobCardProps> = ({ title, type, description, skills, del
       </div>
       <button
         onClick={() => openContact("apply", title)}
-        className="mt-4 text-aurora-blue hover:text-teal-300 text-sm font-semibold underline-offset-4 hover:underline transition-colors"
+        className="mt-4 text-aurora-blue hover:text-teal-300 text-sm font-semibold underline-offset-4 hover:underline transition-colors lux-link"
       >
         Apply for this role
       </button>
@@ -104,7 +104,7 @@ const Careers: React.FC = () => {
         <div className="grid lg:grid-cols-3 gap-10">
           <div ref={ref} className="lg:col-span-1">
             <h2
-              className={`font-display text-3xl md:text-5xl font-bold reveal transition-all duration-1000 ${
+              className={`type-rhythm font-display text-3xl md:text-5xl font-bold reveal transition-all duration-1000 ${
                 isVisible ? "in-view" : ""
               }`}
             >
@@ -126,7 +126,7 @@ const Careers: React.FC = () => {
             </div>
             <button
               onClick={() => openContact("apply")}
-              className={`mt-6 ripple rounded-2xl bg-gradient-to-r from-aurora-purple to-aurora-blue px-5 py-3 font-semibold shadow-glow hover:shadow-glowTeal transition reveal duration-1000 delay-400 ${
+              className={`mt-6 lux-btn ripple rounded-2xl bg-gradient-to-r from-aurora-purple to-aurora-blue px-5 py-3 font-semibold shadow-glow hover:shadow-glowTeal transition reveal duration-1000 delay-400 ${
                 isVisible ? "in-view" : ""
               }`}
             >

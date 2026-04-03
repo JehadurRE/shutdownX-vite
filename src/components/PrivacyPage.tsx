@@ -13,8 +13,8 @@ const PrivacyPage: React.FC = () => {
   return (
     <section id="privacy" className="relative py-16 md:py-24">
       <div className="mx-auto max-w-4xl px-6">
-        <div className="glass rounded-3xl p-8 md:p-10 border border-white/10">
-          <h1 className="font-display text-4xl md:text-5xl font-extrabold grad-text">Privacy Policy</h1>
+        <div className="glass lux-card rounded-3xl p-8 md:p-10 border border-white/10">
+          <h1 className="type-rhythm font-display text-4xl md:text-5xl font-extrabold grad-text">Privacy Policy</h1>
           <p className="mt-3 text-sm text-slate-400">Last updated: {updatedOn}</p>
 
           <div className="mt-8 space-y-7 text-slate-200">

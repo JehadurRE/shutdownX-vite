@@ -13,8 +13,8 @@ const TermsPage: React.FC = () => {
   return (
     <section id="terms" className="relative py-16 md:py-24">
       <div className="mx-auto max-w-4xl px-6">
-        <div className="glass rounded-3xl p-8 md:p-10 border border-white/10">
-          <h1 className="font-display text-4xl md:text-5xl font-extrabold grad-text">Terms and Conditions</h1>
+        <div className="glass lux-card rounded-3xl p-8 md:p-10 border border-white/10">
+          <h1 className="type-rhythm font-display text-4xl md:text-5xl font-extrabold grad-text">Terms and Conditions</h1>
           <p className="mt-3 text-sm text-slate-400">Last updated: {updatedOn}</p>
 
           <div className="mt-8 space-y-7 text-slate-200">
@@ -70,7 +70,7 @@ const TermsPage: React.FC = () => {
               <h2 className="font-display text-2xl font-bold">7. Refunds and Cancellations</h2>
               <p className="mt-2 text-slate-300">
                 Refund eligibility and cancellation terms follow our refund policy available at
-                <a href="/refund" className="ml-1 text-aurora-blue hover:text-teal-300 transition-colors">
+                <a href="/refund" className="ml-1 text-aurora-blue hover:text-teal-300 transition-colors lux-link">
                   /refund
                 </a>
                 .

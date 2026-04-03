@@ -50,50 +50,50 @@ const Navigation: React.FC = () => {
               <>
                 <button
                   onClick={() => scrollToSection("services")}
-                  className="px-4 py-2 rounded-lg hover:bg-white/5 transition"
+                  className="px-4 py-2 rounded-lg hover:bg-white/5 transition lux-link"
                 >
                   Services
                 </button>
                 <button
                   onClick={() => scrollToSection("why")}
-                  className="px-4 py-2 rounded-lg hover:bg-white/5 transition"
+                  className="px-4 py-2 rounded-lg hover:bg-white/5 transition lux-link"
                 >
                   Why Us
                 </button>
                 <button
                   onClick={() => scrollToSection("about")}
-                  className="px-4 py-2 rounded-lg hover:bg-white/5 transition"
+                  className="px-4 py-2 rounded-lg hover:bg-white/5 transition lux-link"
                 >
                   About
                 </button>
                 <button
                   onClick={() => scrollToSection("careers")}
-                  className="px-4 py-2 rounded-lg hover:bg-white/5 transition"
+                  className="px-4 py-2 rounded-lg hover:bg-white/5 transition lux-link"
                 >
                   Careers
                 </button>
                 <button
                   onClick={() => scrollToSection("legal")}
-                  className="px-4 py-2 rounded-lg hover:bg-white/5 transition"
+                  className="px-4 py-2 rounded-lg hover:bg-white/5 transition lux-link"
                 >
                   Trust
                 </button>
               </>
             ) : (
               <>
-                <a href="/" className="px-4 py-2 rounded-lg hover:bg-white/5 transition">
+                <a href="/" className="px-4 py-2 rounded-lg hover:bg-white/5 transition lux-link">
                   Home
                 </a>
-                <a href="/pricing" className="px-4 py-2 rounded-lg hover:bg-white/5 transition">
+                <a href="/pricing" className="px-4 py-2 rounded-lg hover:bg-white/5 transition lux-link">
                   Pricing
                 </a>
-                <a href="/terms-and-conditions" className="px-4 py-2 rounded-lg hover:bg-white/5 transition">
+                <a href="/terms-and-conditions" className="px-4 py-2 rounded-lg hover:bg-white/5 transition lux-link">
                   Terms
                 </a>
-                <a href="/privacy" className="px-4 py-2 rounded-lg hover:bg-white/5 transition">
+                <a href="/privacy" className="px-4 py-2 rounded-lg hover:bg-white/5 transition lux-link">
                   Privacy
                 </a>
-                <a href="/refund" className="px-4 py-2 rounded-lg hover:bg-white/5 transition">
+                <a href="/refund" className="px-4 py-2 rounded-lg hover:bg-white/5 transition lux-link">
                   Refund
                 </a>
               </>
@@ -103,18 +103,41 @@ const Navigation: React.FC = () => {
           <div className="flex items-center gap-2">
             <button
               onClick={() => openContact("hire")}
-              className="ripple rounded-xl bg-gradient-to-r from-aurora-purple to-aurora-blue px-4 py-2 text-sm font-semibold shadow-glow hover:shadow-glowTeal transition"
+              className="lux-btn ripple rounded-xl bg-gradient-to-r from-aurora-purple to-aurora-blue px-4 py-2 text-sm font-semibold shadow-glow hover:shadow-glowTeal transition"
             >
               Hire Us
             </button>
             <button
               onClick={() => scrollToSection("careers")}
-              className="ripple rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold hover:bg-white/10 transition"
+              className="lux-btn ripple rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold hover:bg-white/10 transition"
             >
               Join Us
             </button>
           </div>
         </nav>
+
+        <div className="md:hidden mb-2 no-scrollbar overflow-x-auto">
+          <div className="inline-flex gap-2 rounded-2xl border border-white/10 bg-white/5 p-2 min-w-full">
+            <button onClick={() => scrollToSection("services")} className="lux-btn rounded-lg px-3 py-2 text-xs bg-white/5">
+              Services
+            </button>
+            <button onClick={() => scrollToSection("why")} className="lux-btn rounded-lg px-3 py-2 text-xs bg-white/5">
+              Why
+            </button>
+            <button onClick={() => scrollToSection("about")} className="lux-btn rounded-lg px-3 py-2 text-xs bg-white/5">
+              About
+            </button>
+            <button onClick={() => scrollToSection("careers")} className="lux-btn rounded-lg px-3 py-2 text-xs bg-white/5">
+              Careers
+            </button>
+            <button onClick={() => scrollToSection("legal")} className="lux-btn rounded-lg px-3 py-2 text-xs bg-white/5">
+              Trust
+            </button>
+            <a href="/pricing" className="lux-btn rounded-lg px-3 py-2 text-xs bg-white/5">
+              Pricing
+            </a>
+          </div>
+        </div>
       </div>
     </header>
   )

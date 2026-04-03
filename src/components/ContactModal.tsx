@@ -114,7 +114,7 @@ const ContactModal: React.FC = () => {
     <>
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={handleBackdropClick}>
         <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
-        <div className="relative w-full max-w-xl glass rounded-2xl p-6 animate-in fade-in-0 zoom-in-95 duration-300">
+        <div className="relative w-full max-w-xl glass lux-card rounded-2xl p-6 animate-in fade-in-0 zoom-in-95 duration-300">
           <div className="flex items-center justify-between">
             <div className="font-semibold">{getTitle()}</div>
             <button
@@ -182,19 +182,19 @@ const ContactModal: React.FC = () => {
             <div className="flex gap-2">
               <button
                 onClick={copyMessage}
-                className="ripple rounded-xl border border-white/10 bg-white/5 px-4 py-2 font-semibold hover:bg-white/10 transition"
+                className="lux-btn ripple rounded-xl border border-white/10 bg-white/5 px-4 py-2 font-semibold hover:bg-white/10 transition"
               >
                 Copy message
               </button>
               <button
                 onClick={clearMessage}
-                className="ripple rounded-xl border border-white/10 bg-white/5 px-4 py-2 font-semibold hover:bg-white/10 transition"
+                className="lux-btn ripple rounded-xl border border-white/10 bg-white/5 px-4 py-2 font-semibold hover:bg-white/10 transition"
               >
                 Clear
               </button>
               <button
                 onClick={handleFinish}
-                className="ripple rounded-xl bg-gradient-to-r from-aurora-purple to-aurora-blue px-4 py-2 font-semibold shadow-glow hover:shadow-glowTeal transition"
+                className="lux-btn ripple rounded-xl bg-gradient-to-r from-aurora-purple to-aurora-blue px-4 py-2 font-semibold shadow-glow hover:shadow-glowTeal transition"
               >
                 Done
               </button>

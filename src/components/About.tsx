@@ -27,7 +27,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ title, subtitle, descriptio
         </div>
 
         <div>
-          <div className="inline-block glass rounded-2xl p-4">
+          <div className="inline-block glass lux-card rounded-2xl p-4">
             <div className="text-slate-300 text-xs uppercase tracking-[0.18em]">{title}</div>
             <div className="mt-1 font-semibold">{subtitle}</div>
             <div className="text-slate-400 text-sm mt-1">{description}</div>
@@ -39,7 +39,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ title, subtitle, descriptio
         {isLeft ? (
           <>
             <div className="w-1/2 text-right pr-6">
-              <div className="inline-block glass rounded-2xl p-5 text-left md:text-right">
+              <div className="inline-block glass lux-card rounded-2xl p-5 text-left md:text-right">
                 <div className="text-slate-300 text-xs uppercase tracking-[0.18em]">{title}</div>
                 <div className="mt-1 font-semibold text-lg">{subtitle}</div>
                 <div className="text-slate-400 text-sm mt-1">{description}</div>
@@ -53,7 +53,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ title, subtitle, descriptio
             <div className="w-1/2"></div>
             <div className={`relative h-4 w-4 rounded-full ${color} shadow-glow flex-shrink-0`}></div>
             <div className="w-1/2 pl-6">
-              <div className="inline-block glass rounded-2xl p-5">
+              <div className="inline-block glass lux-card rounded-2xl p-5">
                 <div className="text-slate-300 text-xs uppercase tracking-[0.18em]">{title}</div>
                 <div className="mt-1 font-semibold text-lg">{subtitle}</div>
                 <div className="text-slate-400 text-sm mt-1">{description}</div>
@@ -98,7 +98,7 @@ const About: React.FC = () => {
       <div className="mx-auto max-w-6xl px-6">
         <div ref={ref} className="text-center max-w-3xl mx-auto">
           <h2
-            className={`font-display text-3xl md:text-5xl font-bold reveal transition-all duration-1000 ${
+            className={`type-rhythm font-display text-3xl md:text-5xl font-bold reveal transition-all duration-1000 ${
               isVisible ? "in-view" : ""
             }`}
           >
