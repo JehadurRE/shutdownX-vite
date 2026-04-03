@@ -12,13 +12,17 @@ const Footer: React.FC = () => {
             <div className="text-sm text-slate-400">© {currentYear} ShutdownX. All rights reserved.</div>
           </div>
           <div className="flex items-center gap-4 text-sm">
-            <a
-              href="https://shutdownx.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-teal-300 transition-colors"
-            >
-              Website
+            <a href="/pricing" className="hover:text-teal-300 transition-colors">
+              Pricing
+            </a>
+            <a href="/terms-and-conditions" className="hover:text-teal-300 transition-colors">
+              Terms of Service
+            </a>
+            <a href="/privacy" className="hover:text-teal-300 transition-colors">
+              Privacy Policy
+            </a>
+            <a href="/refund" className="hover:text-teal-300 transition-colors">
+              Refund Policy
             </a>
             <a
               href="https://twitter.com"

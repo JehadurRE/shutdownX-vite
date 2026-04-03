@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="ShutdownX">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#090E16"/>
+      <stop offset="100%" stop-color="#0F1A2A"/>
+    </linearGradient>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="55%" stop-color="#22D3EE"/>
+      <stop offset="100%" stop-color="#14B8A6"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="180" cy="80" r="220" fill="#7C3AED" fill-opacity="0.2"/>
+  <circle cx="1080" cy="540" r="260" fill="#22D3EE" fill-opacity="0.16"/>
+  <circle cx="640" cy="680" r="240" fill="#14B8A6" fill-opacity="0.14"/>
+
+  <g filter="url(#glow)">
+    <rect x="110" y="120" width="980" height="390" rx="32" fill="#FFFFFF" fill-opacity="0.03" stroke="#FFFFFF" stroke-opacity="0.16"/>
+    <path d="M250 220h90l70 88 70-88h90L464 335l106 88h-90l-70-88-70 88h-90l106-88z" fill="url(#g)"/>
+    <text x="250" y="430" fill="#E5E7EB" font-size="58" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="800">ShutdownX</text>
+    <text x="250" y="485" fill="#A5B4FC" font-size="30" font-family="Inter, Segoe UI, Arial, sans-serif">AI SaaS • Automation • Product Engineering</text>
+  </g>
+</svg>

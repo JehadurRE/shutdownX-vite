@@ -7,6 +7,8 @@ import { useContact } from "../contexts/ContactContext"
 const Navigation: React.FC = () => {
   const { openContact } = useContact()
   const [isScrolled, setIsScrolled] = useState(false)
+  const pathname = (typeof window !== "undefined" ? window.location.pathname : "/").replace(/\/+$/, "") || "/"
+  const isHomePage = pathname === "/"
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,6 +19,11 @@ const Navigation: React.FC = () => {
   }, [])
 
   const scrollToSection = (id: string) => {
+    if (!isHomePage) {
+      window.location.href = `/#${id}`
+      return
+    }
+
     const element = document.getElementById(id)
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" })
@@ -45,27 +52,58 @@ const Navigation: React.FC = () => {
           </button>
 
           <div className="hidden md:flex items-center gap-2">
-            <button
-              onClick={() => scrollToSection("services")}
-              className="px-4 py-2 rounded-lg hover:bg-white/5 transition"
-            >
-              Services
-            </button>
-            <button onClick={() => scrollToSection("why")} className="px-4 py-2 rounded-lg hover:bg-white/5 transition">
-              Why Us
-            </button>
-            <button
-              onClick={() => scrollToSection("about")}
-              className="px-4 py-2 rounded-lg hover:bg-white/5 transition"
-            >
-              About
-            </button>
-            <button
-              onClick={() => scrollToSection("careers")}
-              className="px-4 py-2 rounded-lg hover:bg-white/5 transition"
-            >
-              Careers
-            </button>
+            {isHomePage ? (
+              <>
+                <button
+                  onClick={() => scrollToSection("services")}
+                  className="px-4 py-2 rounded-lg hover:bg-white/5 transition"
+                >
+                  Services
+                </button>
+                <button
+                  onClick={() => scrollToSection("why")}
+                  className="px-4 py-2 rounded-lg hover:bg-white/5 transition"
+                >
+                  Why Us
+                </button>
+                <button
+                  onClick={() => scrollToSection("about")}
+                  className="px-4 py-2 rounded-lg hover:bg-white/5 transition"
+                >
+                  About
+                </button>
+                <button
+                  onClick={() => scrollToSection("careers")}
+                  className="px-4 py-2 rounded-lg hover:bg-white/5 transition"
+                >
+                  Careers
+                </button>
+                <button
+                  onClick={() => scrollToSection("legal")}
+                  className="px-4 py-2 rounded-lg hover:bg-white/5 transition"
+                >
+                  Trust
+                </button>
+              </>
+            ) : (
+              <>
+                <a href="/" className="px-4 py-2 rounded-lg hover:bg-white/5 transition">
+                  Home
+                </a>
+                <a href="/pricing" className="px-4 py-2 rounded-lg hover:bg-white/5 transition">
+                  Pricing
+                </a>
+                <a href="/terms-and-conditions" className="px-4 py-2 rounded-lg hover:bg-white/5 transition">
+                  Terms
+                </a>
+                <a href="/privacy" className="px-4 py-2 rounded-lg hover:bg-white/5 transition">
+                  Privacy
+                </a>
+                <a href="/refund" className="px-4 py-2 rounded-lg hover:bg-white/5 transition">
+                  Refund
+                </a>
+              </>
+            )}
           </div>
 
           <div className="flex items-center gap-2">
