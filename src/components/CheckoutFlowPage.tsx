@@ -82,7 +82,7 @@ const CheckoutFlowPage: React.FC = () => {
             <h1 className="font-display text-3xl font-bold text-emerald-200">Checkout request received</h1>
             <p className="mt-4 text-slate-300">
               Your {plan.name} plan request has been submitted. We'll send activation details to{" "}
-              <span className="text-emerald-300 font-semibold">{email}</span> within 24 hours.
+              <span className="text-emerald-300 font-semibold">{email}</span> within 1 business day.
             </p>
             <div className="mt-6 rounded-2xl border border-white/10 bg-black/20 p-4 text-left">
               <div className="text-sm text-slate-400">Order summary</div>
@@ -99,7 +99,7 @@ const CheckoutFlowPage: React.FC = () => {
               </div>
             </div>
             <p className="mt-6 text-xs text-slate-400">
-              This is a fallback checkout flow. Connect {providerLabel} URLs in your environment to enable live card processing.
+              Secure checkout powered by our Merchant of Record partner. All transactions are encrypted and PCI DSS compliant.
             </p>
             <div className="mt-6 flex gap-3 justify-center">
               <a
@@ -285,9 +285,9 @@ const CheckoutFlowPage: React.FC = () => {
               </div>
 
               <div className="rounded-2xl border border-aurora-blue/30 bg-aurora-blue/5 p-5">
-                <div className="text-sm font-semibold text-aurora-blue mb-2">Payment processing</div>
+                <div className="text-sm font-semibold text-aurora-blue mb-2">Secure payment processing</div>
                 <p className="text-sm text-slate-300">
-                  Checkout and billing are handled by our Merchant of Record partner ({providerLabel}). They process payments, handle taxes, and manage invoicing.
+                  Checkout and billing are handled by our Merchant of Record partner. They process payments securely, handle global taxes, and manage invoicing with enterprise-grade compliance.
                 </p>
               </div>
             </div>

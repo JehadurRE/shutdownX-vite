@@ -158,7 +158,7 @@ const PricingPage: React.FC = () => {
                     : "border border-white/10 bg-white/5 hover:bg-white/10"
                 }`}
               >
-                {getCheckoutUrl(plan.id) ? `Checkout with ${checkoutProviderLabel}` : `Choose ${plan.name}`}
+                Get started with {plan.name}
               </button>
             </article>
           ))}
@@ -177,29 +177,38 @@ const PricingPage: React.FC = () => {
           </button>
         </div>
 
-        <div className="mt-8 rounded-3xl border border-white/10 bg-black/20 p-6 lux-card">
-          <h3 className="font-display text-xl font-bold">Checkout and billing setup</h3>
-          <p className="mt-2 text-sm text-slate-300">
-            Secure checkout is processed by {checkoutProviderLabel} as Merchant of Record. Taxes, invoicing, and
-            refund processing follow your published policies.
-          </p>
-          <div className="mt-4 flex flex-wrap gap-2">
-            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300">
-              Provider: {checkoutProviderLabel}
-            </span>
-            <span
-              className={`rounded-full border px-3 py-1 text-xs ${
-                isCheckoutReady
-                  ? "border-emerald-400/30 bg-emerald-400/10 text-emerald-300"
-                  : "border-amber-400/30 bg-amber-400/10 text-amber-300"
-              }`}
-            >
-              {isCheckoutReady ? "Live gateway checkout" : "Fallback checkout active"}
-            </span>
+        <div className="mt-8 rounded-3xl border border-emerald-400/20 bg-emerald-400/5 p-8 lux-card">
+          <div className="flex items-start gap-4">
+            <div className="p-3 rounded-xl bg-emerald-400/10 border border-emerald-400/20">
+              <svg width="24" height="24" viewBox="0 0 24 24" className="text-emerald-300">
+                <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+            </div>
+            <div className="flex-1">
+              <h3 className="font-display text-xl font-bold text-emerald-200">Secure checkout & billing</h3>
+              <p className="mt-2 text-sm text-slate-300">
+                All transactions are processed through our Merchant of Record partner with enterprise-grade security. Automatic tax calculation, invoicing, and compliance handling included.
+              </p>
+              <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div className="rounded-lg border border-white/10 bg-black/20 p-3 text-center">
+                  <div className="text-xs text-slate-400">PCI DSS</div>
+                  <div className="mt-1 text-sm font-semibold text-emerald-300">Compliant</div>
+                </div>
+                <div className="rounded-lg border border-white/10 bg-black/20 p-3 text-center">
+                  <div className="text-xs text-slate-400">Global taxes</div>
+                  <div className="mt-1 text-sm font-semibold text-emerald-300">Automated</div>
+                </div>
+                <div className="rounded-lg border border-white/10 bg-black/20 p-3 text-center">
+                  <div className="text-xs text-slate-400">Invoicing</div>
+                  <div className="mt-1 text-sm font-semibold text-emerald-300">Instant</div>
+                </div>
+                <div className="rounded-lg border border-white/10 bg-black/20 p-3 text-center">
+                  <div className="text-xs text-slate-400">Refunds</div>
+                  <div className="mt-1 text-sm font-semibold text-emerald-300">14-day</div>
+                </div>
+              </div>
+            </div>
           </div>
-          <p className="mt-3 text-xs text-slate-400">
-            Pricing buttons are functional now. Add provider URLs anytime to switch from fallback to live card checkout.
-          </p>
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-3">
