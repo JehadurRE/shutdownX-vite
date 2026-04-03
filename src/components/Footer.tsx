@@ -76,7 +76,7 @@ const Footer: React.FC = () => {
                   Support: <a href="mailto:hello@shutdownx.com" className="text-slate-300 hover:text-teal-300 transition-colors lux-link">hello@shutdownx.com</a>
                 </div>
                 <div>Business Address: Dhaka, Bangladesh</div>
-                <div>Checkout and tax handling via Merchant of Record (Paddle or Lemon Squeezy).</div>
+                <div>Secure checkout with enterprise-grade payment processing</div>
               </div>
             </div>
 
