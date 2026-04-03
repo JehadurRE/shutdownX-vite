@@ -88,3 +88,8 @@ body {
 .ripple:hover:after {
   opacity: 1;
 }
+
+/* Hide scrollbar but keep scroll functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

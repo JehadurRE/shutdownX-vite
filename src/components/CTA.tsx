@@ -30,8 +30,19 @@ const CTA: React.FC = () => {
           />
 
           <div className="relative">
-            <h3 className="font-display text-2xl md:text-4xl font-bold">Let's build the future together.</h3>
-            <p className="mt-2 text-slate-300">AI-powered SaaS, built with care and speed.</p>
+            <h3 className="font-display text-2xl md:text-4xl font-bold">Let's build your next premium product.</h3>
+            <p className="mt-2 text-slate-300">AI-native engineering, elegant UX, and execution you can rely on.</p>
+            <div className="mt-4 flex flex-wrap items-center gap-2">
+              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300">
+                Strategy + execution
+              </span>
+              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300">
+                Weekly progress transparency
+              </span>
+              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300">
+                Security-minded delivery
+              </span>
+            </div>
             <div className="mt-6 flex flex-wrap gap-3">
               <button
                 onClick={() => openContact("hire")}

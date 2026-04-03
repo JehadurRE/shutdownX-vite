@@ -40,7 +40,7 @@ const Navigation: React.FC = () => {
         >
           <button onClick={() => scrollToSection("top")} className="flex items-center gap-3 group">
             <div className="relative w-9 h-9 rounded-xl overflow-hidden border border-white/10 bg-black/30 shadow-glow">
-              <img src="/brand-logo.png" alt="ShutdownX logo" className="h-full w-full object-cover" />
+              <img src="/brand-logo.png" alt="ShutdownX logo" className="h-full w-full object-contain" />
             </div>
             <span className="font-display text-lg tracking-wide grad-text">ShutdownX</span>
           </button>

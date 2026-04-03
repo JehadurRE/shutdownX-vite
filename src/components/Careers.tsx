@@ -115,8 +115,15 @@ const Careers: React.FC = () => {
                 isVisible ? "in-view" : ""
               }`}
             >
-              No age, no CGPA, no degree — just skills. Join the builders.
+              Skills-first hiring. Clear ownership, high standards, and meaningful product impact.
             </p>
+            <div
+              className={`mt-4 inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300 reveal transition-all duration-1000 delay-300 ${
+                isVisible ? "in-view" : ""
+              }`}
+            >
+              Remote-friendly • Outcome-driven • Senior mentorship
+            </div>
             <button
               onClick={() => openContact("apply")}
               className={`mt-6 ripple rounded-2xl bg-gradient-to-r from-aurora-purple to-aurora-blue px-5 py-3 font-semibold shadow-glow hover:shadow-glowTeal transition reveal duration-1000 delay-400 ${

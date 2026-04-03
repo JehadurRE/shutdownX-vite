@@ -169,6 +169,22 @@ const Services: React.FC = () => {
             </div>
           ))}
         </div>
+
+        <div className="mt-8 glass rounded-2xl p-6 md:p-7">
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+            <div>
+              <h3 className="font-display text-xl font-bold">How we engage</h3>
+              <p className="mt-1 text-sm text-slate-300">
+                Discovery, architecture, delivery, and iteration — one integrated product workflow.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2 text-xs">
+              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-300">Sprint-based</span>
+              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-300">Senior-led</span>
+              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-300">KPI-focused</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

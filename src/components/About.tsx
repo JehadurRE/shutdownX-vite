@@ -13,37 +13,55 @@ interface TimelineItemProps {
 const TimelineItem: React.FC<TimelineItemProps> = ({ title, subtitle, description, color, position, delay = 0 }) => {
   const { ref, isVisible } = useScrollReveal()
 
+  const isLeft = position === "left"
+
   return (
     <div
       ref={ref}
-      className={`reveal flex items-center gap-4 transition-all duration-1000 ${isVisible ? "in-view" : ""}`}
+      className={`reveal transition-all duration-1000 ${isVisible ? "in-view" : ""}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
-      {position === "left" ? (
-        <>
-          <div className="w-1/2 text-right pr-6">
-            <div className="inline-block glass rounded-2xl p-4">
-              <div className="text-slate-300 text-sm">{title}</div>
-              <div className="font-semibold">{subtitle}</div>
-              <div className="text-slate-400 text-sm mt-1">{description}</div>
-            </div>
+      <div className="grid grid-cols-[20px_1fr] gap-4 md:hidden">
+        <div className="relative">
+          <div className={`relative mt-2 h-4 w-4 rounded-full ${color} shadow-glow flex-shrink-0`}></div>
+        </div>
+
+        <div>
+          <div className="inline-block glass rounded-2xl p-4">
+            <div className="text-slate-300 text-xs uppercase tracking-[0.18em]">{title}</div>
+            <div className="mt-1 font-semibold">{subtitle}</div>
+            <div className="text-slate-400 text-sm mt-1">{description}</div>
           </div>
-          <div className={`relative h-4 w-4 rounded-full ${color} shadow-glow flex-shrink-0`}></div>
-          <div className="w-1/2"></div>
-        </>
-      ) : (
-        <>
-          <div className="w-1/2"></div>
-          <div className={`relative h-4 w-4 rounded-full ${color} shadow-glow flex-shrink-0`}></div>
-          <div className="w-1/2 pl-6">
-            <div className="inline-block glass rounded-2xl p-4">
-              <div className="text-slate-300 text-sm">{title}</div>
-              <div className="font-semibold">{subtitle}</div>
-              <div className="text-slate-400 text-sm mt-1">{description}</div>
+        </div>
+      </div>
+
+      <div className="hidden md:flex items-center gap-4">
+        {isLeft ? (
+          <>
+            <div className="w-1/2 text-right pr-6">
+              <div className="inline-block glass rounded-2xl p-5 text-left md:text-right">
+                <div className="text-slate-300 text-xs uppercase tracking-[0.18em]">{title}</div>
+                <div className="mt-1 font-semibold text-lg">{subtitle}</div>
+                <div className="text-slate-400 text-sm mt-1">{description}</div>
+              </div>
             </div>
-          </div>
-        </>
-      )}
+            <div className={`relative h-4 w-4 rounded-full ${color} shadow-glow flex-shrink-0`}></div>
+            <div className="w-1/2"></div>
+          </>
+        ) : (
+          <>
+            <div className="w-1/2"></div>
+            <div className={`relative h-4 w-4 rounded-full ${color} shadow-glow flex-shrink-0`}></div>
+            <div className="w-1/2 pl-6">
+              <div className="inline-block glass rounded-2xl p-5">
+                <div className="text-slate-300 text-xs uppercase tracking-[0.18em]">{title}</div>
+                <div className="mt-1 font-semibold text-lg">{subtitle}</div>
+                <div className="text-slate-400 text-sm mt-1">{description}</div>
+              </div>
+            </div>
+          </>
+        )}
+      </div>
     </div>
   )
 }
@@ -97,7 +115,7 @@ const About: React.FC = () => {
 
         <div className="mt-12 relative">
           {/* Timeline line */}
-          <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-aurora-purple/60 via-aurora-blue/40 to-aurora-teal/60"></div>
+          <div className="absolute left-[9px] md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-aurora-purple/60 via-aurora-blue/40 to-aurora-teal/60"></div>
 
           <div className="space-y-10">
             {timelineItems.map((item, index) => (
