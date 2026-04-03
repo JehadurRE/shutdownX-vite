@@ -12,7 +12,7 @@ const quickLinks = [
 const NotFoundPage: React.FC = () => {
   usePageMeta({
     title: "Page Not Found | ShutdownX",
-    description: "The page you requested could not be found. Browse ShutdownX pricing, legal policies, and services.",
+    description: "The page you requested could not be found. Browse ShutdownX pricing, legal policies, and product links.",
     noindex: true,
   })
 

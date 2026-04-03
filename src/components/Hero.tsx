@@ -187,7 +187,7 @@ const Hero: React.FC = () => {
                 isVisible ? "in-view" : ""
               }`}
             >
-              Building the Future of SaaS with AI & Automation
+              Automation SaaS for modern business operations
             </h1>
 
             <p
@@ -195,8 +195,8 @@ const Hero: React.FC = () => {
                 isVisible ? "in-view" : ""
               }`}
             >
-              ShutdownX designs and engineers premium AI products, automation systems, and digital experiences built to
-              convert, scale, and endure.
+              ShutdownX provides API-driven automation software for workflow orchestration, AI-assisted execution, and
+              reliable digital operations.
             </p>
 
             <div
@@ -205,22 +205,22 @@ const Hero: React.FC = () => {
               }`}
             >
               <button
-                onClick={() => openContact("hire")}
+                onClick={() => (window.location.href = "/pricing")}
                 className="lux-btn ripple w-full sm:w-auto rounded-2xl bg-gradient-to-r from-aurora-purple via-aurora-blue to-aurora-teal px-5 py-3 font-semibold shadow-glow hover:shadow-glowTeal transition"
               >
-                Work with us
+                View pricing
               </button>
               <button
                 onClick={() => scrollToSection("services")}
                 className="lux-btn ripple w-full sm:w-auto rounded-2xl border border-white/10 bg-white/5 px-5 py-3 font-semibold hover:bg-white/10 transition"
               >
-                Explore services
+                View capabilities
               </button>
               <button
-                onClick={() => openContact("refer")}
+                onClick={() => openContact("hire")}
                 className="lux-btn ripple w-full sm:w-auto rounded-2xl border border-aurora-teal/30 bg-aurora-teal/10 px-5 py-3 font-semibold text-teal-300 hover:bg-aurora-teal/20 transition"
               >
-                Refer a specialist
+                Contact us
               </button>
             </div>
 
@@ -236,7 +236,7 @@ const Hero: React.FC = () => {
                 Verification-ready policies
               </span>
               <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300">
-                Senior product team
+                Secure product operations
               </span>
             </div>
 
@@ -246,16 +246,16 @@ const Hero: React.FC = () => {
               }`}
             >
               <div className="glass lux-card rounded-xl p-4">
-                <div className="text-sm text-slate-400">Projects launched</div>
-                <div className="mt-1 font-semibold">50+</div>
+                <div className="text-sm text-slate-400">Active automation flows</div>
+                <div className="mt-1 font-semibold">120+</div>
               </div>
               <div className="glass lux-card rounded-xl p-4">
-                <div className="text-sm text-slate-400">Typical kickoff</div>
-                <div className="mt-1 font-semibold">7 business days</div>
+                <div className="text-sm text-slate-400">Average activation</div>
+                <div className="mt-1 font-semibold">Under 1 day</div>
               </div>
               <div className="glass lux-card rounded-xl p-4">
-                <div className="text-sm text-slate-400">Client satisfaction</div>
-                <div className="mt-1 font-semibold">98%</div>
+                <div className="text-sm text-slate-400">Platform reliability</div>
+                <div className="mt-1 font-semibold">99.9%</div>
               </div>
             </div>
           </div>

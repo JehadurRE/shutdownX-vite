@@ -13,7 +13,7 @@ const legalLinks = [
   {
     title: "Terms of Service",
     href: "/terms-and-conditions",
-    description: "Service terms, ownership, confidentiality, and legal framework.",
+    description: "Software license terms, acceptable use, ownership, and legal framework.",
     badge: "Legal",
   },
   {
@@ -30,7 +30,7 @@ const legalLinks = [
   },
 ]
 
-const trustPillars = ["Transparent pricing", "Policy-first operations", "Verification-ready links", "Client-safe delivery"]
+const trustPillars = ["Transparent pricing", "Policy-first operations", "Verification-ready links", "Digital product delivery"]
 
 const LegalHub: React.FC = () => {
   const { ref, isVisible } = useScrollReveal()

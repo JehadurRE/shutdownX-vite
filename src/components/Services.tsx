@@ -69,7 +69,7 @@ const Services: React.FC = () => {
         </svg>
       ),
       title: "AI & LLM Training",
-      description: "Custom pipelines, fine-tuning, retrieval, and orchestration to deliver real outcomes.",
+      description: "Configurable pipelines, retrieval, evaluation, and orchestration modules for production AI workflows.",
       category: "AI & LLM",
       categoryColor: "text-purple-300",
       iconBg: "bg-aurora-purple/20",
@@ -96,7 +96,7 @@ const Services: React.FC = () => {
         </svg>
       ),
       title: "Frontend Development",
-      description: "Next.js apps with buttery UX, delightful microinteractions, and speed.",
+      description: "Production-grade interfaces for dashboards, onboarding, and product operations.",
       category: "Frontend",
       categoryColor: "text-cyan-300",
       iconBg: "bg-aurora-blue/20",
@@ -109,7 +109,7 @@ const Services: React.FC = () => {
         </svg>
       ),
       title: "Backend Development",
-      description: "FastAPI & Next.js APIs designed for clarity, speed, and observability.",
+      description: "API infrastructure focused on reliability, observability, and secure integrations.",
       category: "Backend",
       categoryColor: "text-purple-300",
       iconBg: "bg-aurora-purple/20",
@@ -122,7 +122,7 @@ const Services: React.FC = () => {
         </svg>
       ),
       title: "UI/UX Design",
-      description: "Design systems, prototypes, and product design that convert.",
+      description: "Design systems and workflow UX focused on clarity, adoption, and retention.",
       category: "UI/UX",
       categoryColor: "text-teal-300",
       iconBg: "bg-aurora-teal/20",
@@ -151,14 +151,14 @@ const Services: React.FC = () => {
               isVisible ? "in-view" : ""
             }`}
           >
-            Services that ship, scale, and shine
+            Product capabilities that ship, scale, and endure
           </h2>
           <p
             className={`mt-3 text-slate-300 reveal transition-all duration-1000 delay-200 ${
               isVisible ? "in-view" : ""
             }`}
           >
-            From LLMs to pixel-perfect UI, we build automation-first systems that feel like the future.
+            From AI orchestration to API automation, every capability is delivered as a software product module.
           </p>
         </div>
 
@@ -173,15 +173,15 @@ const Services: React.FC = () => {
         <div className="mt-8 glass lux-card rounded-2xl p-6 md:p-7">
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
             <div>
-              <h3 className="font-display text-xl font-bold">How we engage</h3>
+              <h3 className="font-display text-xl font-bold">How the product is delivered</h3>
               <p className="mt-1 text-sm text-slate-300">
-                Discovery, architecture, delivery, and iteration — one integrated product workflow.
+                Instant digital provisioning, documentation, and ongoing updates through your active subscription.
               </p>
             </div>
             <div className="flex flex-wrap gap-2 text-xs">
-              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-300">Sprint-based</span>
-              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-300">Senior-led</span>
-              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-300">KPI-focused</span>
+              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-300">Subscription-based</span>
+              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-300">Digital delivery</span>
+              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-300">Product updates</span>
             </div>
           </div>
         </div>

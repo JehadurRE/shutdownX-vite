@@ -48,13 +48,13 @@ const CTA: React.FC = () => {
                 onClick={() => openContact("hire")}
                 className="lux-btn ripple rounded-2xl bg-gradient-to-r from-aurora-purple via-aurora-blue to-aurora-teal px-5 py-3 font-semibold shadow-glow hover:shadow-glowTeal transition"
               >
-                Work with us
+                Get started
               </button>
               <button
                 onClick={() => openContact("refer")}
                 className="lux-btn ripple rounded-2xl border border-white/10 bg-white/5 px-5 py-3 font-semibold hover:bg-white/10 transition"
               >
-                Refer a specialist
+                Request demo
               </button>
             </div>
           </div>

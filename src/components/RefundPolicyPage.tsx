@@ -6,8 +6,8 @@ const RefundPolicyPage: React.FC = () => {
 
   usePageMeta({
     title: "Refund Policy | ShutdownX",
-    description: "Understand ShutdownX refund terms, milestone billing rules, cancellations, and request timelines.",
-    keywords: ["ShutdownX refund", "refund policy", "billing policy"],
+    description: "Understand ShutdownX software subscription refunds, cancellation timelines, and merchant-of-record processing.",
+    keywords: ["ShutdownX refund", "SaaS refund policy", "14-day money-back"],
   })
 
   return (
@@ -21,47 +21,54 @@ const RefundPolicyPage: React.FC = () => {
             <section>
               <h2 className="font-display text-2xl font-bold">1. Scope</h2>
               <p className="mt-2 text-slate-300">
-                This policy applies to all ShutdownX service engagements, including strategy, design, development, and
-                automation implementation.
+                This policy applies to all ShutdownX digital products, software licenses, and SaaS subscriptions.
               </p>
             </section>
 
             <section>
-              <h2 className="font-display text-2xl font-bold">2. Deposits</h2>
+              <h2 className="font-display text-2xl font-bold">2. 14-Day Money-Back Guarantee</h2>
               <p className="mt-2 text-slate-300">
-                Project deposits secure scheduling and are generally non-refundable once project onboarding has started.
+                First-time purchases are eligible for a full refund within 14 days if the product does not function as
+                described and our support team cannot resolve the issue.
               </p>
             </section>
 
             <section>
-              <h2 className="font-display text-2xl font-bold">3. Milestone Payments</h2>
+              <h2 className="font-display text-2xl font-bold">3. Subscription Cancellations</h2>
               <p className="mt-2 text-slate-300">
-                Refunds for milestone payments are evaluated only for undelivered portions of work. Completed
-                deliverables and approved milestones are non-refundable.
+                Subscriptions can be canceled any time before renewal to avoid the next charge. Cancellation prevents
+                future billing and access continues until the end of the active billing period.
               </p>
             </section>
 
             <section>
-              <h2 className="font-display text-2xl font-bold">4. Subscription Services</h2>
+              <h2 className="font-display text-2xl font-bold">4. Non-Refundable Cases</h2>
               <p className="mt-2 text-slate-300">
-                Monthly retainers can be canceled before the next billing cycle. Partial month refunds are not provided
-                unless required by law.
+                Refunds are generally not provided for renewals older than 14 days, policy abuse, or issues caused by
+                customer-side modifications outside documented product use.
               </p>
             </section>
 
             <section>
-              <h2 className="font-display text-2xl font-bold">5. Chargebacks</h2>
+              <h2 className="font-display text-2xl font-bold">5. Merchant of Record Processing</h2>
               <p className="mt-2 text-slate-300">
-                Before opening a chargeback, contact us directly to resolve concerns. Fraudulent chargebacks may result
-                in suspension of active services.
+                Approved refunds are issued by the Merchant of Record used at checkout (Paddle.com or LemonSqueezy.com)
+                to your original payment method.
               </p>
             </section>
 
             <section>
               <h2 className="font-display text-2xl font-bold">6. Request Process</h2>
               <p className="mt-2 text-slate-300">
-                Submit refund requests within 14 days of the relevant invoice date with project details and rationale.
-                We review each request in good faith and respond within 7 business days.
+                Submit refund requests to hello@shutdownx.com within 14 days of purchase and include your order ID and
+                issue details. We review in good faith and respond within 7 business days.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-display text-2xl font-bold">7. Chargebacks</h2>
+              <p className="mt-2 text-slate-300">
+                We encourage you to contact us before initiating a chargeback. Chargebacks may result in immediate account suspension and may affect future purchase eligibility.
               </p>
             </section>
           </div>

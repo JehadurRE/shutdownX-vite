@@ -12,10 +12,12 @@ import LegalHub from "./components/LegalHub"
 import Footer from "./components/Footer"
 import BackgroundEffects from "./components/BackgroundEffects"
 import PricingPage from "./components/PricingPage"
+import ProductsPage from "./components/ProductsPage"
 import TermsPage from "./components/TermsPage"
 import PrivacyPage from "./components/PrivacyPage"
 import RefundPolicyPage from "./components/RefundPolicyPage"
 import NotFoundPage from "./components/NotFoundPage"
+import CheckoutFlowPage from "./components/CheckoutFlowPage"
 import { ContactProvider } from "./contexts/ContactContext"
 import { setupScrollReveal, setupRippleEffects, setupTiltEffects } from "./utils/animations"
 import { usePageMeta } from "./hooks/usePageMeta"
@@ -26,14 +28,14 @@ function App() {
 
   usePageMeta({
     title: isHomePage
-      ? "ShutdownX — Building the Future of SaaS with AI & Automation"
+      ? "ShutdownX — Automation SaaS Platform"
       : "ShutdownX",
     description: isHomePage
-      ? "ShutdownX builds next-gen, AI-powered SaaS products with automation-first engineering and design excellence."
-      : "ShutdownX builds AI-powered products, automation systems, and modern digital experiences.",
+      ? "ShutdownX provides automation-first SaaS products for workflow orchestration, API integrations, and AI-powered operations."
+      : "ShutdownX provides automation software, AI workflows, and SaaS product infrastructure.",
     keywords: isHomePage
-      ? ["AI SaaS development", "automation agency", "LLM integration", "FastAPI", "n8n", "ShutdownX"]
-      : ["ShutdownX", "AI services", "automation"],
+      ? ["automation SaaS", "workflow orchestration", "LLM automation", "API integrations", "ShutdownX"]
+      : ["ShutdownX", "automation software", "SaaS platform"],
     structuredData: isHomePage
       ? {
           "@context": "https://schema.org",
@@ -82,6 +84,10 @@ function App() {
       return <PricingPage />
     }
 
+    if (pathname === "/products") {
+      return <ProductsPage />
+    }
+
     if (pathname === "/terms-and-conditions") {
       return <TermsPage />
     }
@@ -94,12 +100,18 @@ function App() {
       return <RefundPolicyPage />
     }
 
+    if (pathname === "/checkout") {
+      return <CheckoutFlowPage />
+    }
+
     if (
       pathname !== "/" &&
       pathname !== "/pricing" &&
+      pathname !== "/products" &&
       pathname !== "/terms-and-conditions" &&
       pathname !== "/privacy" &&
-      pathname !== "/refund"
+      pathname !== "/refund" &&
+      pathname !== "/checkout"
     ) {
       return <NotFoundPage />
     }

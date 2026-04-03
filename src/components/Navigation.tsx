@@ -52,7 +52,7 @@ const Navigation: React.FC = () => {
                   onClick={() => scrollToSection("services")}
                   className="px-4 py-2 rounded-lg hover:bg-white/5 transition lux-link"
                 >
-                  Services
+                  Capabilities
                 </button>
                 <button
                   onClick={() => scrollToSection("why")}
@@ -84,6 +84,9 @@ const Navigation: React.FC = () => {
                 <a href="/" className="px-4 py-2 rounded-lg hover:bg-white/5 transition lux-link">
                   Home
                 </a>
+                <a href="/products" className="px-4 py-2 rounded-lg hover:bg-white/5 transition lux-link">
+                  Products
+                </a>
                 <a href="/pricing" className="px-4 py-2 rounded-lg hover:bg-white/5 transition lux-link">
                   Pricing
                 </a>
@@ -93,25 +96,22 @@ const Navigation: React.FC = () => {
                 <a href="/privacy" className="px-4 py-2 rounded-lg hover:bg-white/5 transition lux-link">
                   Privacy
                 </a>
-                <a href="/refund" className="px-4 py-2 rounded-lg hover:bg-white/5 transition lux-link">
-                  Refund
-                </a>
               </>
             )}
           </div>
 
           <div className="flex items-center gap-2">
-            <button
-              onClick={() => openContact("hire")}
+            <a
+              href="/pricing"
               className="lux-btn ripple rounded-xl bg-gradient-to-r from-aurora-purple to-aurora-blue px-4 py-2 text-sm font-semibold shadow-glow hover:shadow-glowTeal transition"
             >
-              Hire Us
-            </button>
+              View Pricing
+            </a>
             <button
-              onClick={() => scrollToSection("careers")}
+              onClick={() => openContact("hire")}
               className="lux-btn ripple rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold hover:bg-white/10 transition"
             >
-              Join Us
+              Contact
             </button>
           </div>
         </nav>
@@ -119,7 +119,7 @@ const Navigation: React.FC = () => {
         <div className="md:hidden mb-2 no-scrollbar overflow-x-auto">
           <div className="inline-flex gap-2 rounded-2xl border border-white/10 bg-white/5 p-2 min-w-full">
             <button onClick={() => scrollToSection("services")} className="lux-btn rounded-lg px-3 py-2 text-xs bg-white/5">
-              Services
+              Capabilities
             </button>
             <button onClick={() => scrollToSection("why")} className="lux-btn rounded-lg px-3 py-2 text-xs bg-white/5">
               Why
@@ -127,12 +127,9 @@ const Navigation: React.FC = () => {
             <button onClick={() => scrollToSection("about")} className="lux-btn rounded-lg px-3 py-2 text-xs bg-white/5">
               About
             </button>
-            <button onClick={() => scrollToSection("careers")} className="lux-btn rounded-lg px-3 py-2 text-xs bg-white/5">
-              Careers
-            </button>
-            <button onClick={() => scrollToSection("legal")} className="lux-btn rounded-lg px-3 py-2 text-xs bg-white/5">
-              Trust
-            </button>
+            <a href="/products" className="lux-btn rounded-lg px-3 py-2 text-xs bg-white/5">
+              Products
+            </a>
             <a href="/pricing" className="lux-btn rounded-lg px-3 py-2 text-xs bg-white/5">
               Pricing
             </a>

@@ -6,7 +6,7 @@ import { useContact } from "../contexts/ContactContext"
 
 const ContactModal: React.FC = () => {
   const { isContactOpen, contactMode, contactRole, closeContact } = useContact()
-  const [topic, setTopic] = useState("Hire Us")
+  const [topic, setTopic] = useState("Get Started")
   const [role, setRole] = useState("")
   const [message, setMessage] = useState("")
   const [showToast, setShowToast] = useState(false)
@@ -16,13 +16,13 @@ const ContactModal: React.FC = () => {
     if (isContactOpen) {
       // Set initial values based on contact mode
       if (contactMode === "hire") {
-        setTopic("Hire Us")
+        setTopic("Get Started")
         setMessage(
-          "Hi ShutdownX — We'd like to explore working together on an AI-powered SaaS project. Timeline: __. Budget: __. Goals: __.",
+          "Hi ShutdownX — We'd like to start with your software subscription. Plan: __. Use case: __. Team size: __.",
         )
       } else if (contactMode === "refer") {
-        setTopic("Refer a Specialist")
-        setMessage("Hi — I'd like to refer a specialist for your network. Name: __, Skill: __, Links: __.")
+        setTopic("Request a Demo")
+        setMessage("Hi — We'd like a product demo. Use case: __. Team size: __. Preferred time: __.")
       } else if (contactMode === "apply") {
         setTopic("Apply for a Role")
         setMessage("Hi — I'd love to apply. Role: __. Portfolio/GitHub: __. Availability: __.")
@@ -102,7 +102,7 @@ const ContactModal: React.FC = () => {
       case "hire":
         return "Work with ShutdownX"
       case "refer":
-        return "Refer a specialist"
+        return "Request a demo"
       case "apply":
         return "Apply for a role"
       default:
@@ -136,8 +136,8 @@ const ContactModal: React.FC = () => {
                 onChange={(e) => setTopic(e.target.value)}
                 className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 outline-none focus:border-aurora-blue/50 transition-colors"
               >
-                <option value="Hire Us">Hire Us</option>
-                <option value="Refer a Specialist">Refer a Specialist</option>
+                <option value="Get Started">Get Started</option>
+                <option value="Request a Demo">Request a Demo</option>
                 <option value="Apply for a Role">Apply for a Role</option>
               </select>
             </div>

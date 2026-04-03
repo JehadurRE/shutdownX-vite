@@ -37,6 +37,7 @@ const Footer: React.FC = () => {
   }
 
   const legalLinks = [
+    { label: "Products", href: "/products" },
     { label: "Pricing", href: "/pricing" },
     { label: "Terms of Service", href: "/terms-and-conditions" },
     { label: "Privacy Policy", href: "/privacy" },
@@ -65,10 +66,17 @@ const Footer: React.FC = () => {
                 </div>
               </div>
               <p className="mt-4 max-w-md text-sm text-slate-300">
-                Premium AI products, automation systems, and modern digital experiences built for ambitious teams.
+                Premium automation software and SaaS products built for reliable business operations.
               </p>
               <div className="mt-4 inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300">
                 Verification-ready legal pages live
+              </div>
+              <div className="mt-4 space-y-1 text-xs text-slate-400">
+                <div>
+                  Support: <a href="mailto:hello@shutdownx.com" className="text-slate-300 hover:text-teal-300 transition-colors lux-link">hello@shutdownx.com</a>
+                </div>
+                <div>Business Address: Dhaka, Bangladesh</div>
+                <div>Checkout and tax handling via Merchant of Record (Paddle or Lemon Squeezy).</div>
               </div>
             </div>
 

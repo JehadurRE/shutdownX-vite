@@ -41,3 +41,18 @@ This project uses RealFaviconGenerator via `rfg-api`.
 
 Optional custom source file:
 - `pnpm generate:favicons -- ./public/your-logo.png`
+
+## Payment checkout setup (Paddle / Lemon Squeezy)
+
+To make pricing checkout fully functional:
+
+1. Copy [\.env.example](.env.example) to `.env`.
+2. Set `VITE_PAYMENT_PROVIDER` to `paddle` or `lemon`.
+3. Add plan checkout URLs from your payment dashboard:
+	- `VITE_PADDLE_CHECKOUT_LAUNCH_URL`
+	- `VITE_PADDLE_CHECKOUT_SCALE_URL`
+	- `VITE_PADDLE_CHECKOUT_ENTERPRISE_URL`
+	- or Lemon equivalents.
+4. Run `pnpm dev` and test each Pricing plan button.
+
+If a checkout URL is missing, the Pricing page automatically routes to an internal fallback checkout page (`/checkout`) so the flow remains functional.

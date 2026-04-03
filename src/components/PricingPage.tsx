@@ -1,10 +1,11 @@
 import type React from "react"
-import { useState } from "react"
 import { useContact } from "../contexts/ContactContext"
 import { usePageMeta } from "../hooks/usePageMeta"
+import { getCheckoutProviderLabel, getCheckoutUrl, hasAnyCheckoutConfigured } from "../lib/checkout"
 
 const plans = [
   {
+    id: "launch",
     name: "Launch",
     subtitle: "For teams launching their first automation stack",
     price: "$49",
@@ -19,6 +20,7 @@ const plans = [
     ],
   },
   {
+    id: "scale",
     name: "Scale",
     subtitle: "For growing companies with production workloads",
     price: "$199",
@@ -33,6 +35,7 @@ const plans = [
     ],
   },
   {
+    id: "enterprise",
     name: "Enterprise",
     subtitle: "For enterprise deployment and governance",
     price: "$1,999",
@@ -46,11 +49,12 @@ const plans = [
       "Priority implementation guidance",
     ],
   },
-]
+] as const
 
 const PricingPage: React.FC = () => {
   const { openContact } = useContact()
-  const [copiedLabel, setCopiedLabel] = useState<string | null>(null)
+  const checkoutProviderLabel = getCheckoutProviderLabel()
+  const isCheckoutReady = hasAnyCheckoutConfigured()
 
   usePageMeta({
     title: "Pricing | ShutdownX",
@@ -66,27 +70,26 @@ const PricingPage: React.FC = () => {
         position: index + 1,
         name: plan.name,
         description: plan.subtitle,
-        priceSpecification:
-          plan.price === "Custom"
-            ? undefined
-            : {
-                "@type": "PriceSpecification",
-                priceCurrency: "USD",
-                price: plan.price.replace(/[$,]/g, ""),
-                billingDuration: plan.cadence,
-              },
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          priceCurrency: "USD",
+          price: plan.price.replace(/[$,]/g, ""),
+          billingDuration: plan.cadence,
+        },
       })),
     },
   })
 
-  const origin = typeof window !== "undefined" ? window.location.origin : "https://yourdomain.com"
+  const handleCheckout = (planId: "launch" | "scale" | "enterprise") => {
+    const checkoutUrl = getCheckoutUrl(planId)
 
-  const verificationLinks = [
-    { label: "Pricing Page", path: "/pricing" },
-    { label: "Terms of Service", path: "/terms-and-conditions" },
-    { label: "Privacy Policy", path: "/privacy" },
-    { label: "Refund Policy", path: "/refund" },
-  ]
+    if (checkoutUrl) {
+      window.location.href = checkoutUrl
+      return
+    }
+
+    openContact("hire")
+  }
 
   const faqs = [
     {
@@ -102,16 +105,6 @@ const PricingPage: React.FC = () => {
       a: "Yes. Our products may not be used for spam, mass unsolicited messaging, or artificial social engagement automation.",
     },
   ]
-
-  const handleCopy = async (label: string, value: string) => {
-    try {
-      await navigator.clipboard.writeText(value)
-      setCopiedLabel(label)
-      window.setTimeout(() => setCopiedLabel(null), 1800)
-    } catch {
-      setCopiedLabel(null)
-    }
-  }
 
   return (
     <section id="pricing" className="relative py-16 md:py-24">
@@ -158,14 +151,14 @@ const PricingPage: React.FC = () => {
               </ul>
 
               <button
-                onClick={() => openContact("hire")}
+                onClick={() => handleCheckout(plan.id)}
                 className={`lux-btn ripple mt-8 w-full rounded-xl px-4 py-3 text-sm font-semibold transition ${
                   plan.highlight
                     ? "bg-gradient-to-r from-aurora-purple via-aurora-blue to-aurora-teal text-white shadow-glow hover:shadow-glowTeal"
                     : "border border-white/10 bg-white/5 hover:bg-white/10"
                 }`}
               >
-                Start with {plan.name}
+                {getCheckoutUrl(plan.id) ? `Checkout with ${checkoutProviderLabel}` : `Choose ${plan.name}`}
               </button>
             </article>
           ))}
@@ -184,44 +177,29 @@ const PricingPage: React.FC = () => {
           </button>
         </div>
 
-        <div className="mt-10 rounded-3xl border border-aurora-blue/30 bg-gradient-to-br from-aurora-blue/10 via-white/5 to-aurora-teal/10 p-8 lux-card">
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="rounded-full border border-aurora-teal/30 bg-aurora-teal/10 px-3 py-1 text-xs text-teal-200">
-              Verification-ready
-            </span>
-            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300">
-              Professional policy stack
-            </span>
-          </div>
-          <h3 className="type-rhythm mt-4 font-display text-2xl md:text-3xl font-bold">Business verification links</h3>
-          <p className="mt-2 text-slate-300">
-            Use these URLs in payment provider and platform verification forms.
+        <div className="mt-8 rounded-3xl border border-white/10 bg-black/20 p-6 lux-card">
+          <h3 className="font-display text-xl font-bold">Checkout and billing setup</h3>
+          <p className="mt-2 text-sm text-slate-300">
+            Secure checkout is processed by {checkoutProviderLabel} as Merchant of Record. Taxes, invoicing, and
+            refund processing follow your published policies.
           </p>
-
-          <div className="mt-6 space-y-3">
-            {verificationLinks.map((item) => {
-              const fullUrl = `${origin}${item.path}`
-              return (
-                <div
-                  key={item.label}
-                  className="flex flex-col gap-3 rounded-2xl border border-white/10 bg-black/20 p-4 md:flex-row md:items-center md:justify-between lux-card"
-                >
-                  <div>
-                    <div className="text-sm font-semibold">{item.label}</div>
-                    <a href={item.path} className="text-sm text-cyan-300 hover:text-teal-300 transition-colors break-all">
-                      {fullUrl}
-                    </a>
-                  </div>
-                  <button
-                    onClick={() => handleCopy(item.label, fullUrl)}
-                    className="lux-btn ripple rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold hover:bg-white/10 transition"
-                  >
-                    {copiedLabel === item.label ? "Copied" : "Copy URL"}
-                  </button>
-                </div>
-              )
-            })}
+          <div className="mt-4 flex flex-wrap gap-2">
+            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300">
+              Provider: {checkoutProviderLabel}
+            </span>
+            <span
+              className={`rounded-full border px-3 py-1 text-xs ${
+                isCheckoutReady
+                  ? "border-emerald-400/30 bg-emerald-400/10 text-emerald-300"
+                  : "border-amber-400/30 bg-amber-400/10 text-amber-300"
+              }`}
+            >
+              {isCheckoutReady ? "Live gateway checkout" : "Fallback checkout active"}
+            </span>
           </div>
+          <p className="mt-3 text-xs text-slate-400">
+            Pricing buttons are functional now. Add provider URLs anytime to switch from fallback to live card checkout.
+          </p>
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-3">
