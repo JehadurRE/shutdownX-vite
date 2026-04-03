@@ -28,3 +28,16 @@ Continue building your app on:
 2. Deploy your chats from the v0 interface
 3. Changes are automatically pushed to this repository
 4. Vercel deploys the latest version from this repository
+
+## Favicon generation (RealFaviconGenerator)
+
+This project uses RealFaviconGenerator via `rfg-api`.
+
+1. Put your source logo in [public/placeholder-logo.png](public/placeholder-logo.png) or pass a custom file path.
+2. Set your API key in the terminal:
+	- PowerShell: `$env:RFG_API_KEY="your_api_key"`
+3. Generate favicon assets and inject markup into [index.html](index.html):
+	- `pnpm generate:favicons`
+
+Optional custom source file:
+- `pnpm generate:favicons -- ./public/your-logo.png`

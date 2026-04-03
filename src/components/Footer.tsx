@@ -8,7 +8,9 @@ const Footer: React.FC = () => {
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-aurora-purple to-aurora-blue shadow-glow"></div>
+            <div className="w-8 h-8 rounded-lg overflow-hidden border border-white/10 bg-black/30 shadow-glow">
+              <img src="/brand-logo.png" alt="ShutdownX logo" className="h-full w-full object-cover" />
+            </div>
             <div className="text-sm text-slate-400">© {currentYear} ShutdownX. All rights reserved.</div>
           </div>
           <div className="flex items-center gap-4 text-sm">

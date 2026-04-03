@@ -39,14 +39,8 @@ const Navigation: React.FC = () => {
           }`}
         >
           <button onClick={() => scrollToSection("top")} className="flex items-center gap-3 group">
-            <div className="relative w-9 h-9 rounded-xl bg-gradient-to-br from-aurora-purple to-aurora-blue shadow-glow overflow-hidden">
-              <div
-                className="absolute inset-0 opacity-80 animate-pulseSoft"
-                style={{
-                  background:
-                    "conic-gradient(from 0deg, rgba(255,255,255,.16), transparent 40%, rgba(255,255,255,.16) 60%, transparent 100%)",
-                }}
-              ></div>
+            <div className="relative w-9 h-9 rounded-xl overflow-hidden border border-white/10 bg-black/30 shadow-glow">
+              <img src="/brand-logo.png" alt="ShutdownX logo" className="h-full w-full object-cover" />
             </div>
             <span className="font-display text-lg tracking-wide grad-text">ShutdownX</span>
           </button>
