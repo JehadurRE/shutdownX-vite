@@ -163,51 +163,51 @@ const CheckoutFlowPage: React.FC = () => {
         <div className="absolute right-1/4 bottom-1/4 h-96 w-96 rounded-full bg-gradient-to-tr from-aurora-teal/30 to-aurora-blue/20 blur-3xl" />
       </div>
 
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
         {/* Premium Progress Indicator */}
-        <div className="mb-12 flex items-center justify-center">
-          <div className="flex items-center gap-3 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm px-6 py-3">
-            <div className="flex items-center gap-2">
-              <div className={`h-8 w-8 rounded-full flex items-center justify-center font-semibold text-sm transition-all ${
+        <div className="mb-8 sm:mb-12 flex items-center justify-center overflow-x-auto">
+          <div className="flex items-center gap-2 sm:gap-3 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm px-4 sm:px-6 py-2 sm:py-3 min-w-max">
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <div className={`h-6 w-6 sm:h-8 sm:w-8 rounded-full flex items-center justify-center font-semibold text-xs sm:text-sm transition-all ${
                 step === "plan" ? "bg-gradient-to-br from-aurora-purple to-aurora-blue text-white shadow-glow" : "bg-white/10 text-slate-400"
               }`}>
                 1
               </div>
-              <span className={`text-sm font-medium ${step === "plan" ? "text-white" : "text-slate-400"}`}>Plan</span>
+              <span className={`text-xs sm:text-sm font-medium ${step === "plan" ? "text-white" : "text-slate-400"}`}>Plan</span>
             </div>
             
-            <div className={`h-0.5 w-16 rounded-full ${step !== "plan" ? "bg-gradient-to-r from-aurora-purple to-aurora-blue" : "bg-white/10"}`} />
+            <div className={`h-0.5 w-8 sm:w-16 rounded-full ${step !== "plan" ? "bg-gradient-to-r from-aurora-purple to-aurora-blue" : "bg-white/10"}`} />
             
-            <div className="flex items-center gap-2">
-              <div className={`h-8 w-8 rounded-full flex items-center justify-center font-semibold text-sm transition-all ${
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <div className={`h-6 w-6 sm:h-8 sm:w-8 rounded-full flex items-center justify-center font-semibold text-xs sm:text-sm transition-all ${
                 step === "details" ? "bg-gradient-to-br from-aurora-blue to-aurora-teal text-white shadow-glow" : step === "confirm" ? "bg-emerald-400/20 text-emerald-300" : "bg-white/10 text-slate-400"
               }`}>
                 2
               </div>
-              <span className={`text-sm font-medium ${step === "details" || step === "confirm" ? "text-white" : "text-slate-400"}`}>Details</span>
+              <span className={`text-xs sm:text-sm font-medium ${step === "details" || step === "confirm" ? "text-white" : "text-slate-400"}`}>Details</span>
             </div>
             
-            <div className={`h-0.5 w-16 rounded-full ${step === "confirm" ? "bg-gradient-to-r from-aurora-blue to-aurora-teal" : "bg-white/10"}`} />
+            <div className={`h-0.5 w-8 sm:w-16 rounded-full ${step === "confirm" ? "bg-gradient-to-r from-aurora-blue to-aurora-teal" : "bg-white/10"}`} />
             
-            <div className="flex items-center gap-2">
-              <div className={`h-8 w-8 rounded-full flex items-center justify-center font-semibold text-sm transition-all ${
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <div className={`h-6 w-6 sm:h-8 sm:w-8 rounded-full flex items-center justify-center font-semibold text-xs sm:text-sm transition-all ${
                 step === "confirm" ? "bg-gradient-to-br from-aurora-teal to-emerald-400 text-white shadow-glow" : "bg-white/10 text-slate-400"
               }`}>
                 3
               </div>
-              <span className={`text-sm font-medium ${step === "confirm" ? "text-white" : "text-slate-400"}`}>Confirm</span>
+              <span className={`text-xs sm:text-sm font-medium ${step === "confirm" ? "text-white" : "text-slate-400"}`}>Confirm</span>
             </div>
           </div>
         </div>
 
         {step === "plan" && (
-          <div className="glass lux-card rounded-3xl border border-white/10 p-10 md:p-12 backdrop-blur-xl">
-            <div className="text-center mb-10">
-              <h1 className="type-rhythm font-display text-4xl md:text-5xl font-extrabold grad-text">Choose your plan</h1>
-              <p className="mt-3 text-lg text-slate-300">Select the software license that fits your workflow</p>
+          <div className="glass lux-card rounded-3xl border border-white/10 p-6 sm:p-8 md:p-10 backdrop-blur-xl">
+            <div className="text-center mb-8 sm:mb-10">
+              <h1 className="type-rhythm font-display text-3xl sm:text-4xl md:text-5xl font-extrabold grad-text">Choose your plan</h1>
+              <p className="mt-3 text-base sm:text-lg text-slate-300">Select the software license that fits your workflow</p>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-3">
+            <div className="grid gap-4 sm:gap-6 md:grid-cols-3">
               {(Object.keys(planCatalog) as PlanId[]).map((id) => {
                 const p = planCatalog[id]
                 const isSelected = selectedPlan === id
@@ -215,33 +215,33 @@ const CheckoutFlowPage: React.FC = () => {
                   <button
                     key={id}
                     onClick={() => handlePlanSelect(id)}
-                    className={`group relative glass lux-card rounded-2xl p-7 border text-left transition-all duration-300 ${
+                    className={`group relative glass lux-card rounded-2xl p-5 sm:p-7 border text-left transition-all duration-300 ${
                       isSelected 
                         ? "border-aurora-blue/60 shadow-glow scale-105" 
                         : "border-white/10 hover:border-aurora-blue/40 hover:shadow-glow hover:scale-102"
                     }`}
                   >
                     {isSelected && (
-                      <div className="absolute -top-3 -right-3 h-8 w-8 rounded-full bg-gradient-to-br from-emerald-400 to-teal-400 flex items-center justify-center shadow-glow">
-                        <svg width="16" height="16" viewBox="0 0 24 24" className="text-white">
+                      <div className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-gradient-to-br from-emerald-400 to-teal-400 flex items-center justify-center shadow-glow">
+                        <svg width="14" height="14" viewBox="0 0 24 24" className="text-white">
                           <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                         </svg>
                       </div>
                     )}
                     
-                    <div className={`inline-flex px-3 py-1 rounded-full text-xs font-semibold mb-4 bg-gradient-to-r ${p.color} bg-clip-text text-transparent border border-white/10`}>
+                    <div className={`inline-flex px-2.5 sm:px-3 py-1 rounded-full text-xs font-semibold mb-3 sm:mb-4 bg-gradient-to-r ${p.color} bg-clip-text text-transparent border border-white/10`}>
                       {p.name}
                     </div>
                     
                     <div className="flex items-baseline gap-2">
-                      <div className="text-4xl font-extrabold">{p.price}</div>
-                      <div className="text-sm text-slate-400">/ {p.cadence.replace("per ", "")}</div>
+                      <div className="text-3xl sm:text-4xl font-extrabold">{p.price}</div>
+                      <div className="text-xs sm:text-sm text-slate-400">/ {p.cadence.replace("per ", "")}</div>
                     </div>
                     
-                    <ul className="mt-6 space-y-3 text-sm text-slate-300">
+                    <ul className="mt-4 sm:mt-6 space-y-2 sm:space-y-3 text-xs sm:text-sm text-slate-300">
                       {p.features.map((f) => (
-                        <li key={f} className="flex items-start gap-3">
-                          <svg width="20" height="20" viewBox="0 0 24 24" className="text-aurora-teal flex-shrink-0 mt-0.5">
+                        <li key={f} className="flex items-start gap-2 sm:gap-3">
+                          <svg width="18" height="18" viewBox="0 0 24 24" className="text-aurora-teal flex-shrink-0 mt-0.5">
                             <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                           </svg>
                           <span>{f}</span>
@@ -249,8 +249,8 @@ const CheckoutFlowPage: React.FC = () => {
                       ))}
                     </ul>
                     
-                    <div className={`mt-6 pt-6 border-t ${isSelected ? "border-aurora-blue/30" : "border-white/10"}`}>
-                      <div className={`text-sm font-semibold ${isSelected ? "text-aurora-blue" : "text-slate-400 group-hover:text-aurora-blue"} transition-colors`}>
+                    <div className={`mt-4 sm:mt-6 pt-4 sm:pt-6 border-t ${isSelected ? "border-aurora-blue/30" : "border-white/10"}`}>
+                      <div className={`text-xs sm:text-sm font-semibold ${isSelected ? "text-aurora-blue" : "text-slate-400 group-hover:text-aurora-blue"} transition-colors`}>
                         {isSelected ? "Selected →" : "Select plan →"}
                       </div>
                     </div>
@@ -263,10 +263,10 @@ const CheckoutFlowPage: React.FC = () => {
 
         {step === "details" && (
           <div className="max-w-2xl mx-auto">
-            <div className="glass lux-card rounded-3xl border border-white/10 p-10 md:p-12 backdrop-blur-xl">
+            <div className="glass lux-card rounded-3xl border border-white/10 p-6 sm:p-8 md:p-10 backdrop-blur-xl">
               <button
                 onClick={() => setStep("plan")}
-                className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-slate-200 transition-colors mb-6"
+                className="inline-flex items-center gap-2 text-xs sm:text-sm text-slate-400 hover:text-slate-200 transition-colors mb-4 sm:mb-6"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24">
                   <path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
@@ -274,23 +274,23 @@ const CheckoutFlowPage: React.FC = () => {
                 Change plan
               </button>
               
-              <h1 className="type-rhythm font-display text-4xl md:text-5xl font-extrabold grad-text">Account details</h1>
-              <p className="mt-3 text-lg text-slate-300">We'll use this information to set up your subscription</p>
+              <h1 className="type-rhythm font-display text-3xl sm:text-4xl md:text-5xl font-extrabold grad-text">Account details</h1>
+              <p className="mt-3 text-base sm:text-lg text-slate-300">We'll use this information to set up your subscription</p>
 
-              <div className="mt-8 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/0 p-6">
-                <div className="flex items-center justify-between">
+              <div className="mt-6 sm:mt-8 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/0 p-4 sm:p-6">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                   <div>
-                    <div className="text-sm text-slate-400">Selected plan</div>
-                    <div className="mt-1 text-2xl font-bold">{plan.name}</div>
-                    <div className="text-sm text-slate-400">{plan.cadence}</div>
+                    <div className="text-xs sm:text-sm text-slate-400">Selected plan</div>
+                    <div className="mt-1 text-xl sm:text-2xl font-bold">{plan.name}</div>
+                    <div className="text-xs sm:text-sm text-slate-400">{plan.cadence}</div>
                   </div>
-                  <div className="text-right">
-                    <div className="text-3xl font-extrabold grad-text">{plan.price}</div>
+                  <div className="text-left sm:text-right">
+                    <div className="text-2xl sm:text-3xl font-extrabold grad-text">{plan.price}</div>
                   </div>
                 </div>
               </div>
 
-              <form onSubmit={handleDetailsSubmit} className="mt-8 space-y-6">
+              <form onSubmit={handleDetailsSubmit} className="mt-6 sm:mt-8 space-y-4 sm:space-y-6">
                 <div>
                   <label className="block text-sm font-medium text-slate-300 mb-2">Full name *</label>
                   <input
@@ -298,7 +298,7 @@ const CheckoutFlowPage: React.FC = () => {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="John Doe"
-                    className="w-full rounded-xl border border-white/10 bg-white/5 px-5 py-4 text-lg outline-none focus:border-aurora-blue/50 focus:ring-2 focus:ring-aurora-blue/20 transition-all"
+                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 sm:px-5 py-3 sm:py-4 text-base sm:text-lg outline-none focus:border-aurora-blue/50 focus:ring-2 focus:ring-aurora-blue/20 transition-all"
                   />
                 </div>
                 
@@ -310,7 +310,7 @@ const CheckoutFlowPage: React.FC = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="john@company.com"
-                    className="w-full rounded-xl border border-white/10 bg-white/5 px-5 py-4 text-lg outline-none focus:border-aurora-blue/50 focus:ring-2 focus:ring-aurora-blue/20 transition-all"
+                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 sm:px-5 py-3 sm:py-4 text-base sm:text-lg outline-none focus:border-aurora-blue/50 focus:ring-2 focus:ring-aurora-blue/20 transition-all"
                   />
                 </div>
                 
@@ -320,13 +320,13 @@ const CheckoutFlowPage: React.FC = () => {
                     value={company}
                     onChange={(e) => setCompany(e.target.value)}
                     placeholder="Acme Inc"
-                    className="w-full rounded-xl border border-white/10 bg-white/5 px-5 py-4 text-lg outline-none focus:border-aurora-blue/50 focus:ring-2 focus:ring-aurora-blue/20 transition-all"
+                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 sm:px-5 py-3 sm:py-4 text-base sm:text-lg outline-none focus:border-aurora-blue/50 focus:ring-2 focus:ring-aurora-blue/20 transition-all"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="lux-btn ripple w-full rounded-xl bg-gradient-to-r from-aurora-purple via-aurora-blue to-aurora-teal px-6 py-4 text-lg font-semibold shadow-glow hover:shadow-glowTeal transition-all mt-8"
+                  className="lux-btn ripple w-full rounded-xl bg-gradient-to-r from-aurora-purple via-aurora-blue to-aurora-teal px-6 py-3 sm:py-4 text-base sm:text-lg font-semibold shadow-glow hover:shadow-glowTeal transition-all mt-6 sm:mt-8"
                 >
                   Continue to review →
                 </button>
